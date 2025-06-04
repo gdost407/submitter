@@ -13,5 +13,15 @@ class Web extends BaseController
   {
     return view('Web-Home');
   }
+
+  public function docs(): string
+  {
+    return view('Web-Docs');
+  }
+
+  public function examples(): string
+  {
+    return view('Web-Example');
+  }
 }
 

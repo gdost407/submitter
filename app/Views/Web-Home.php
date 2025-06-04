@@ -60,6 +60,10 @@
             padding: .4rem .65rem;
             text-align: center;
         }
+        header li.active a {
+            background-color: rgba(221, 72, 20, .2);
+            color: rgba(221, 72, 20, 1);
+        }
         header li.menu-item a:hover,
         header li.menu-item a:focus {
             background-color: rgba(221, 72, 20, .2);
@@ -215,9 +219,8 @@
         <li class="menu-toggle">
           <button id="menuToggle">&#9776;</button>
         </li>
-        <li class="menu-item hidden"><a href="<?= base_url();?>">Home</a></li>
-        <li class="menu-item hidden"><a href="<?= base_url('docs');?>">Docs</a>
-        </li>
+        <li class="menu-item hidden active"><a href="<?= base_url();?>">Home</a></li>
+        <li class="menu-item hidden"><a href="<?= base_url('docs');?>">Docs</a></li>
         <li class="menu-item hidden"><a href="<?= base_url('examples');?>">Examples</a></li>
         <li class="menu-item hidden"><a href="<?= base_url('contact');?>">Contact</a></li>
       </ul>
@@ -225,14 +228,14 @@
 
     <div class="heroe">
 
-      <h1>
+      <h1 style="text-align: center;">
         <span style="color: black;">Welcome</span> 
         <span style="color: red;">to</span> 
         <span style="color: purple;">SUBMITTER</span>
       </h1>
 
-      <h2>Easy to get your <b style="color: red;">Leads</b> on your <b style="color: purple;">Emails</b>.</h2>
-      <h4>Easily connect your HTML form to our endpoint and get submissions via email * no backend needed.</h4>
+      <h2 style="text-align: center;">Easy to get your <b style="color: red;">Leads</b> on your <b style="color: purple;">Emails</b>.</h2>
+      <h4 style="text-align: center;">Easily connect your HTML form to our endpoint and get submissions via email * no backend needed.</h4>
 
     </div>
 
@@ -241,6 +244,8 @@
   <!-- CONTENT -->
 
   <section>
+
+    <pre style="margin-top: 0; text-align: center; color: purple; border-color: red;"><code>&lt;form action="https://submitter.aniketgolhar.in/v1/your@email.com" method="POST"&gt;</code></pre>
 
     <h1>Fast & Free Form Integration</h1>
 
@@ -284,18 +289,28 @@
 
     <p>Enhance your forms with special functionality by using name attributes that start with an underscore (_). These advanced options let you customize behavior without writing any code.</p>
 
-    <h4 style="font-weight: bold;">1. CONNECT YOUR FORM</h4>
-    <p>Set your form’s action to our URL and start receiving submissions directly in your inbox.</p>
+    <h4 style="font-weight: bold;">1. submitter_replyto</h4>
+    <p>In SUBMITTER, you can make replies effortless by setting the user's email as the Reply-To address. Just include a field for their email, and you’ll be able to respond directly from your inbox.</p>
 
-    <pre><code>&lt;form action="https://submitter.aniketgolhar.in/v1/your@email.com" method="POST"&gt;&lt;/form&gt;</code></pre>
-
-    <h4 style="font-weight: bold;">2. ADD NAME ATTRIBUTES</h4>
-    <p>Make sure every &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt; has a name attribute, this is how your form data gets captured and sent to your email.</p>
+    <pre><code>&lt;input type="hidden" name="submitter_replyto" value="true"&gt;</code></pre>
+    
+    <p>To enable this feature in SUBMITTER, simply add an email field to your form to capture the user’s address.</p>
 
     <pre><code>&lt;input type="email" name="email"&gt;</code></pre>
 
-    <h4 style="font-weight: bold;">3. SEND AND CONFIRM</h4>
-    <p>Submit your form once to trigger a confirmation email. Just click the link in that email to start receiving submissions.</p>
+    <h4 style="font-weight: bold;">2. submitter_subject</h4>
+    <p>Use this value in SUBMITTER to set a custom email subject, making it easy to identify and reply to form submissions without changing the subject manually.</p>
+
+    <pre><code>&lt;input type="hidden" name="submitter_subject" value="Your custom subject"&gt;</code></pre>
+
+    <h4 style="font-weight: bold;">3. submitter_cc</h4>
+    <p>In SUBMITTER, use this value to set the email's CC field perfect for sending a copy of each form submission to another recipient automatically.</p>
+
+    <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com"&gt;</code></pre>
+
+    <p>To CC multiple recipients in SUBMITTER, simply list all email addresses separated by commas ",". Each one will receive a copy of the form submission.</p>
+
+    <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com,another@email.com"&gt;</code></pre>
 
   </section>
 

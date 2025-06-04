@@ -7,3 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Web::index');
+$routes->get('/docs', 'Web::docs');
+$routes->get('/examples', 'Web::examples');
