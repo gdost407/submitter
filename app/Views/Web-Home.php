@@ -344,5 +344,74 @@
 
 <!-- -->
 
+<!-- Popup Style -->
+<style>
+  .verify-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none;
+    animation: fadeIn 0.5s ease;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .verify-popup.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 6px solid #28a745;
+  }
+
+  .verify-popup.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 6px solid #dc3545;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+  }
+</style>
+
+<div id="verifyPopup" class="verify-popup"></div>
+
+<script>
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const verified = getQueryParam('verified');
+  const popup = document.getElementById('verifyPopup');
+
+  if (verified === 'true') {
+    popup.classList.add('success');
+    popup.innerText = '✅ Email successfully verified.';
+    popup.style.display = 'block';
+  } else if (verified === 'false') {
+    popup.classList.add('error');
+    popup.innerText = '❌ Verification failed or link is invalid.';
+    popup.style.display = 'block';
+  }
+
+  if (popup.style.display === 'block') {
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 5000);
+  }
+</script>
+
+
+
 </body>
 </html>

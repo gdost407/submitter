@@ -14,6 +14,7 @@ $routes->get('/examples', 'Web::examples');
 $routes->get('/contact', 'Web::contact');
 
 $routes->post('v1/(:any)', 'V1::submit/$1');
+$routes->get('verify/(:any)', 'V1::verifyEmail/$1');
 
 $routes->get('v2', 'V2::index');
 $routes->get('v2/test/(:any)', 'V2::sendTestEmail/$1');
