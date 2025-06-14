@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Submitter By AG4</title>
+    <title>Submitter Documentation</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
 
     <!-- STYLES -->
 
@@ -210,7 +210,7 @@
       <div class="menu">
         <ul>
           <li class="logo">
-            <a href="https://codeigniter.com">
+            <a href="<?= base_url();?>">
               <span style="font-size: 18px; font-weight: bold; color: black;">SUBM</span>
               <span style="font-size: 18px; font-weight: bold; color: red;">I</span>
               <span style="font-size: 18px; font-weight: bold; color: purple;">TTER</span>

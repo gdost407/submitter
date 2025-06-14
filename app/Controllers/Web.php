@@ -23,5 +23,10 @@ class Web extends BaseController
   {
     return view('Web-Example');
   }
+
+  public function contact(): string
+  {
+    return view('Web-Contact');
+  }
 }
 

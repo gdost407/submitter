@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Submitter Example</title>
+    <title>Submitter Contact</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
@@ -221,8 +221,8 @@
           </li>
           <li class="menu-item hidden"><a href="<?= base_url();?>">Home</a></li>
           <li class="menu-item hidden"><a href="<?= base_url('docs');?>">Docs</a></li>
-          <li class="menu-item hidden active"><a href="<?= base_url('examples');?>">Examples</a></li>
-          <li class="menu-item hidden"><a href="<?= base_url('contact');?>">Contact</a></li>
+          <li class="menu-item hidden"><a href="<?= base_url('examples');?>">Examples</a></li>
+          <li class="menu-item hidden active"><a href="<?= base_url('contact');?>">Contact</a></li>
         </ul>
       </div>
 
@@ -231,10 +231,9 @@
         <h1 style="text-align: center;">
           <span style="color: black;">SUBMITTER</span> 
           <!-- <span style="color: red;">to</span>  -->
-          <span style="color: purple;">EXAMPLE</span>
+          <span style="color: purple;">CONTACT</span>
         </h1>
 
-        <h4 style="text-align: center;">The interactive HTML editor on the left lets you modify form elements in real time. As you make changes, the form on the right updates instantly. Replace your@email.com with your own address and submit the form to see the submission arrive in your inbox.</h4>
       </div>
 
     </header>
@@ -242,12 +241,7 @@
     <!-- CONTENT -->
 
     <section>
-      <p class="codepen" data-height="550" data-default-tab="html,result" data-slug-hash="wBaoKox" data-pen-title="SUBBMITTER Form" data-editable="true" data-user="gost-dost" style="height: 550px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/gost-dost/pen/wBaoKox">
-  SUBBMITTER Form</a> by gost dost (<a href="https://codepen.io/gost-dost">@gost-dost</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://public.codepenassets.com/embed/index.js"></script>
+      
     </section>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->

@@ -9,3 +9,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Web::index');
 $routes->get('/docs', 'Web::docs');
 $routes->get('/examples', 'Web::examples');
+$routes->get('/contact', 'Web::contact');
