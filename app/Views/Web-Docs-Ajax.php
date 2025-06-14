@@ -230,10 +230,10 @@
 
         <h1 style="text-align: center;">
           <span style="color: black;">SUBMITTER</span> 
-          <!-- <span style="color: red;">to</span>  -->
+          <span style="color: red;">AJAX</span> 
           <span style="color: purple;">DOCUMENTATION</span>
         </h1>
-
+        <h3 style="text-align: center; width: 85%; margin: 0 auto;">Send forms using AJAX without redirecting users or leaving the page. SUBMITTER supports seamless integration, and we’ve included examples using popular libraries to help you get started quickly.</h3>
       </div>
 
     </header>
@@ -242,96 +242,51 @@
 
     <section>
 
-      <h4 style="font-weight: bold;">1. submitter_replyto</h4>
-      <p>In SUBMITTER, you can make replies effortless by setting the user's email as the Reply-To address. Just include a field for their email, and you’ll be able to respond directly from your inbox.</p>
+      <h4 style="font-weight: bold;">1. Fetch Library</h4>
 
-      <pre><code>&lt;input type="hidden" name="submitter_replyto" value="true"&gt;</code></pre>
-      
-      <p>To enable this feature in SUBMITTER, simply add an email field to your form to capture the user’s address.</p>
-
-      <pre><code>&lt;input type="email" name="email"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">2. submitter_subject</h4>
-      <p>Use this value in SUBMITTER to set a custom email subject, making it easy to identify and reply to form submissions without changing the subject manually.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_subject" value="Your custom subject"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">3. submitter_cc</h4>
-      <p>In SUBMITTER, use this value to set the email's CC field perfect for sending a copy of each form submission to another recipient automatically.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com"&gt;</code></pre>
-
-      <p>To CC multiple recipients in SUBMITTER, simply list all email addresses separated by commas ",". Each one will receive a copy of the form submission.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com,another@email.com"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">4. submitter_autorespond</h4>
-      <p>With SUBMITTER, you can instantly send users a copy of their submission along with a personalized message, perfect for confirmations or thank-you notes.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_autorespond" value="Your custom message"&gt;</code></pre>
-      
-      <p>To enable this feature in SUBMITTER, simply add an email field to your form to capture the user’s address.</p>
-
-      <pre><code>&lt;input type="email" name="email"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">5. submitter_template</h4>
-      <p>SUBMITTER offers 3 email templates to choose from. The basic template is used by default, but you can easily switch to the one that best fits your style.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_template" value="basic"&gt;</code></pre>
-
-      <p><a href="<?= base_url('docs-template');?>">View more submitter templates</a></p>
-
-      <h4 style="font-weight: bold;">6. submitter_webhook</h4>
-      <p>With SUBMITTER, you can set up a webhook that fires whenever a new form submission is received directly in your inbox. This is perfect for enabling real-time data handling, integrations, and automation.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_webhook" value="https://your-domain.com/webhook-endpoint"&gt;</code></pre>
-
-      <p>Here’s a sample webhook JSON payload sent by SUBMITTER on your webhook endpoint:</p>
-
-      <pre><code>{
-    "formData": {
-      "name": "John Doe",
-      "email": "Bxq0s@example.com",
-      "message": "Hello, this is a test message."
+      <pre><code>fetch('https://submitter.aniketgolhar.in/v1/your@email.com', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
     },
-    "formTimestamp": "<?= date('Y-m-d H:i:s'); ?>"
-  }</code></pre>
+    body: JSON.stringify({
+        name: "FormSubmit",
+        message: "I'm from Devro LABS"
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(error));
+</code></pre>
+      
+      <h4 style="font-weight: bold;">2. Axios Library</h4>
+      
+      <pre><code>axios.post('https://submitter.aniketgolhar.in/v1/your@email.com', {
+    name: "FormSubmit",
+    message: "I'm from Devro LABS"
+})
+.then(response => {
+    console.log(response.data);
+})
+.catch(error => {
+    console.error(error);
+});
+</code></pre>
 
-      <h4 style="font-weight: bold;">7. File Upload</h4>
-      <p>SUBMITTER supports native file uploads, letting you collect pdf or images files easily—perfect for info that can’t be captured by text fields alone.</p>
-      <p>Remember to add <span style="background-color: rgba(247, 248, 249, 1); border: 1px solid rgba(242, 242, 242, 1); padding: 0.3rem 1rem;">enctype="multipart/form-data"</span> in your form tag to enable file uploads.</p>
-
-      <pre><code style="line-height: 1.5rem;">&lt;form action="https://submitter.aniketgolhar.in/v1/your@email.com" method="POST" enctype="multipart/form-data"&gt;
-      &lt;input type="email" name="email" placeholder="Your email"&gt;
-      &lt;textarea name="message" placeholder="Your message"&gt;&lt;/textarea&gt;
-      &lt;input type="file" name="attachment" accept=".pdf, .png, .jpg, .jpeg"&gt;
-      &lt;button type="submit"&gt;Submit&lt;/button&gt;
-  &lt;/form&gt;</code></pre>
-
-      <p>* Note: you can upload a single file per form submission, and the file size must not exceed 2MB.</p>
-
-      <h4 style="font-weight: bold;">8. AJAX Submission</h4>
-      <p>With SUBMITTER, you can submit forms via AJAX seamlessly, with your users stay on the page, and it even supports cross-origin requests effortlessly.</p>
+      <h4 style="font-weight: bold;">3. jQuery Library</h4>
 
       <pre><code>$.ajax({
-      url: "https://submitter.aniketgolhar.in/v1/your@email.com",
-      method: "POST",
-      data: {
-          name: "FormSubmit",
-          message: "I'm from Devro LABS"
-      },
-      dataType: "json"
-  });
-  </code></pre>
-      <p><a href="<?= base_url('docs-ajax');?>">Example for <b>fetch</b>, <b>axios</b>, <b>jQuery</b> : View More</a></p>
-
-      <h4 style="font-weight: bold;">Create Unlimited Forms and Collect Unlimited Responses</h4>
-      <p>Build as many forms as you want tied to one email, and receive endless submissions without limits.</p>
-
-      <h4 style="font-weight: bold;">Easily Retrieve Your Submission History</h4>
-      <p>Missed a submission? Access your complete, timestamped submission archive anytime via our free API. The API is limited to 2 calls per day.</p>
-      <p>Submissions are kept for 30 days. Uploaded files aren’t stored or available through the API.</p>
-
+    method: 'POST',
+    url: 'https://submitter.aniketgolhar.in/v1/your@email.com',
+    dataType: 'json',
+    data: {
+        name: "FormSubmit",
+        message: "I'm from Devro LABS"
+    },
+    success: (data) => console.log(data),
+    error: (err) => console.log(err)
+});</code></pre>
+      
     </section>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->

@@ -19,6 +19,16 @@ class Web extends BaseController
     return view('Web-Docs');
   }
 
+  public function docsAjax(): string
+  {
+    return view('Web-Docs-Ajax');
+  }
+
+  public function docsTemplate(): string
+  {
+    return view('Web-Docs-Template');
+  }
+
   public function examples(): string
   {
     return view('Web-Example');

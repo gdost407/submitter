@@ -230,10 +230,10 @@
 
         <h1 style="text-align: center;">
           <span style="color: black;">SUBMITTER</span> 
-          <!-- <span style="color: red;">to</span>  -->
+          <span style="color: red;">TEMPLATE</span> 
           <span style="color: purple;">DOCUMENTATION</span>
         </h1>
-
+        <h3 style="text-align: center; width: 85%; margin: 0 auto;">Pick the email style that suits you best! SUBMITTER offers multiple clean and professional templates, just select the one you prefer for your submission emails.</h3>
       </div>
 
     </header>
@@ -242,96 +242,97 @@
 
     <section>
 
-      <h4 style="font-weight: bold;">1. submitter_replyto</h4>
-      <p>In SUBMITTER, you can make replies effortless by setting the user's email as the Reply-To address. Just include a field for their email, and you’ll be able to respond directly from your inbox.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_replyto" value="true"&gt;</code></pre>
+      <h4 style="font-weight: bold;">1. basic</h4>
       
-      <p>To enable this feature in SUBMITTER, simply add an email field to your form to capture the user’s address.</p>
-
-      <pre><code>&lt;input type="email" name="email"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">2. submitter_subject</h4>
-      <p>Use this value in SUBMITTER to set a custom email subject, making it easy to identify and reply to form submissions without changing the subject manually.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_subject" value="Your custom subject"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">3. submitter_cc</h4>
-      <p>In SUBMITTER, use this value to set the email's CC field perfect for sending a copy of each form submission to another recipient automatically.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com"&gt;</code></pre>
-
-      <p>To CC multiple recipients in SUBMITTER, simply list all email addresses separated by commas ",". Each one will receive a copy of the form submission.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_cc" value="example@email.com,another@email.com"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">4. submitter_autorespond</h4>
-      <p>With SUBMITTER, you can instantly send users a copy of their submission along with a personalized message, perfect for confirmations or thank-you notes.</p>
-
-      <pre><code>&lt;input type="hidden" name="submitter_autorespond" value="Your custom message"&gt;</code></pre>
-      
-      <p>To enable this feature in SUBMITTER, simply add an email field to your form to capture the user’s address.</p>
-
-      <pre><code>&lt;input type="email" name="email"&gt;</code></pre>
-
-      <h4 style="font-weight: bold;">5. submitter_template</h4>
-      <p>SUBMITTER offers 3 email templates to choose from. The basic template is used by default, but you can easily switch to the one that best fits your style.</p>
-
       <pre><code>&lt;input type="hidden" name="submitter_template" value="basic"&gt;</code></pre>
 
-      <p><a href="<?= base_url('docs-template');?>">View more submitter templates</a></p>
+      <div style="border: 1px dashed black; padding: 10px;">
+        <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">John Doe</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Email:</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">john@example.com</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Message:</strong></td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Hello! I'm interested in your services.</td>
+          </tr>
+        </table>
+      </div>
 
-      <h4 style="font-weight: bold;">6. submitter_webhook</h4>
-      <p>With SUBMITTER, you can set up a webhook that fires whenever a new form submission is received directly in your inbox. This is perfect for enabling real-time data handling, integrations, and automation.</p>
+      <h4 style="font-weight: bold;">2. modern</h4>
+      
+      <pre><code>&lt;input type="hidden" name="submitter_template" value="modern"&gt;</code></pre>
 
-      <pre><code>&lt;input type="hidden" name="submitter_webhook" value="https://your-domain.com/webhook-endpoint"&gt;</code></pre>
+      <div style="border: 1px dashed black; padding: 10px;">
+        <div style="max-width: 500px; margin: auto; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h2 style="margin-top: 0;">New Form Submission</h2>
+          <div style="margin-bottom: 10px;"><strong>Name:</strong> John Doe</div>
+          <div style="margin-bottom: 10px;"><strong>Email:</strong> john@example.com</div>
+          <div style="margin-bottom: 10px;"><strong>Message:</strong> Hello! I'm interested in your services.</div>
+        </div>
 
-      <p>Here’s a sample webhook JSON payload sent by SUBMITTER on your webhook endpoint:</p>
+      </div>
 
-      <pre><code>{
-    "formData": {
-      "name": "John Doe",
-      "email": "Bxq0s@example.com",
-      "message": "Hello, this is a test message."
-    },
-    "formTimestamp": "<?= date('Y-m-d H:i:s'); ?>"
-  }</code></pre>
+      <h4 style="font-weight: bold;">3. classic</h4>
+      
+      <pre><code>&lt;input type="hidden" name="submitter_template" value="classic"&gt;</code></pre>
 
-      <h4 style="font-weight: bold;">7. File Upload</h4>
-      <p>SUBMITTER supports native file uploads, letting you collect pdf or images files easily—perfect for info that can’t be captured by text fields alone.</p>
-      <p>Remember to add <span style="background-color: rgba(247, 248, 249, 1); border: 1px solid rgba(242, 242, 242, 1); padding: 0.3rem 1rem;">enctype="multipart/form-data"</span> in your form tag to enable file uploads.</p>
+      <div style="border: 1px dashed black; padding: 10px;">
+        <div style="font-family: Georgia, serif; font-size: 16px;">
+          <p><strong>Form Submission Details:</strong></p>
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li><strong>Name:</strong> John Doe</li>
+            <li><strong>Email:</strong> john@example.com</li>
+            <li><strong>Message:</strong> Hello! I'm interested in your services.</li>
+          </ul>
+        </div>
+      </div>
 
-      <pre><code style="line-height: 1.5rem;">&lt;form action="https://submitter.aniketgolhar.in/v1/your@email.com" method="POST" enctype="multipart/form-data"&gt;
-      &lt;input type="email" name="email" placeholder="Your email"&gt;
-      &lt;textarea name="message" placeholder="Your message"&gt;&lt;/textarea&gt;
-      &lt;input type="file" name="attachment" accept=".pdf, .png, .jpg, .jpeg"&gt;
-      &lt;button type="submit"&gt;Submit&lt;/button&gt;
-  &lt;/form&gt;</code></pre>
+      <h4 style="font-weight: bold;">4. boxed</h4>
+      
+      <pre><code>&lt;input type="hidden" name="submitter_template" value="boxed"&gt;</code></pre>
 
-      <p>* Note: you can upload a single file per form submission, and the file size must not exceed 2MB.</p>
+      <div style="border: 1px dashed black; padding: 10px;">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px; font-family: Arial, sans-serif; max-width: 500px; background: #f4f4f4; padding: 20px; border-radius: 8px;">
+          <div style="font-weight: bold;">Name:</div>
+          <div>John Doe</div>
+          <div style="font-weight: bold;">Email:</div>
+          <div>john@example.com</div>
+          <div style="font-weight: bold;">Message:</div>
+          <div>Hello! I'm interested in your services.</div>
+        </div>
+      </div>
 
-      <h4 style="font-weight: bold;">8. AJAX Submission</h4>
-      <p>With SUBMITTER, you can submit forms via AJAX seamlessly, with your users stay on the page, and it even supports cross-origin requests effortlessly.</p>
+      <h4 style="font-weight: bold;">5. badge</h4>
+      
+      <pre><code>&lt;input type="hidden" name="submitter_template" value="badge"&gt;</code></pre>
 
-      <pre><code>$.ajax({
-      url: "https://submitter.aniketgolhar.in/v1/your@email.com",
-      method: "POST",
-      data: {
-          name: "FormSubmit",
-          message: "I'm from Devro LABS"
-      },
-      dataType: "json"
-  });
-  </code></pre>
-      <p><a href="<?= base_url('docs-ajax');?>">Example for <b>fetch</b>, <b>axios</b>, <b>jQuery</b> : View More</a></p>
+      <div style="border: 1px dashed black; padding: 10px;">
+        <div style="font-family: sans-serif; background-color: #fff; padding: 20px; border-left: 5px solid #4CAF50;">
+          <p><span style="background:#4CAF50;color:white;padding:3px 8px;border-radius:4px;">Name</span> John Doe</p>
+          <p><span style="background:#2196F3;color:white;padding:3px 8px;border-radius:4px;">Email</span> john@example.com</p>
+          <p><span style="background:#FF9800;color:white;padding:3px 8px;border-radius:4px;">Message</span> Hello! I'm interested in your services.</p>
+        </div>
+      </div>
 
-      <h4 style="font-weight: bold;">Create Unlimited Forms and Collect Unlimited Responses</h4>
-      <p>Build as many forms as you want tied to one email, and receive endless submissions without limits.</p>
+      <h4 style="font-weight: bold;">6. minimal</h4>
+      
+      <pre><code>&lt;input type="hidden" name="submitter_template" value="minimal"&gt;</code></pre>
 
-      <h4 style="font-weight: bold;">Easily Retrieve Your Submission History</h4>
-      <p>Missed a submission? Access your complete, timestamped submission archive anytime via our free API. The API is limited to 2 calls per day.</p>
-      <p>Submissions are kept for 30 days. Uploaded files aren’t stored or available through the API.</p>
-
+      <div style="border: 1px dashed black; padding: 10px;">
+        <div style="font-family: 'Helvetica Neue', sans-serif; font-size: 16px; color: #333;">
+          <p><strong>Name</strong><br>John Doe</p>
+          <hr style="border:none;border-top:1px solid #ccc;">
+          <p><strong>Email</strong><br>john@example.com</p>
+          <hr style="border:none;border-top:1px solid #ccc;">
+          <p><strong>Message</strong><br>Hello! I'm interested in your services.</p>
+        </div>
+      </div>
+      
     </section>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
