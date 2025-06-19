@@ -5,7 +5,30 @@
     <title>Submitter By AG4</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
+    <!-- Meta Description for SUBMITTER Homepage -->
+    <meta name="description" content="SUBMITTER lets you turn any HTML form into a fully functional backend form with email delivery, file uploads, CC, autoresponders, and webhooks. No coding required.">
+
+    <meta name="keywords" content="submit, submitter, SUBMITTER, form backend, HTML form to email, no-code form processing, form handler, form submission API, file upload form backend, webhook forms, email responder, submitter tool">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Aniket Golhar">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SUBMITTER - HTML Form to Email API & Backend">
+    <meta property="og:description" content="Power up your HTML forms with SUBMITTER: email notifications, file uploads, auto-responders, and webhook integration – no backend needed.">
+    <meta property="og:image" content="<?= base_url('assets/logo.png');?>">
+    <meta property="og:url" content="<?= base_url();?>">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SUBMITTER - Smart Form Backend for Developers">
+    <meta name="twitter:description" content="Create powerful, backend-connected forms without writing server code. SUBMITTER makes it fast and secure.">
+    <meta name="twitter:image" content="<?= base_url('assets/logo.png');?>">
+    <meta name="twitter:url" content="<?= base_url();?>">
+
+
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/logo.png');?>">
 
     <!-- STYLES -->
 
@@ -323,7 +346,7 @@
 
     <div class="copyrights">
 
-        <p>&copy; <?= date('Y') ?> Aniket Golhar. Design and development by Aniket Golhar.</p>
+        <p>&copy; <?= date('Y') ?> <span style="font-weight: bold; color: white;">SUBM</span><span style="font-weight: bold; color: red;">I</span><span style="font-weight: bold; color: pink;">TTER</span>. Design and developed by <a href="https://aniketgolhar.in" target="_blank" style="color: white; text-decoration: none;">Aniket Golhar</a>.</p>
 
     </div>
 

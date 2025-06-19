@@ -5,7 +5,30 @@
     <title>Submitter Documentation</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
+
+    <!-- Meta Description for Template Documentation -->
+    <meta name="description" content="Explore email templates offered by SUBMITTER. Choose from classic, modern, striped, boxed, and minimal layouts for displaying form data.">
+
+    <meta name="keywords" content="submit, submitter, form email templates, submitter templates, email layout for form, submitter email design, responsive form email, classic template, modern template, html table email form">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Aniket Golhar">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Email Templates - SUBMITTER Docs">
+    <meta property="og:description" content="Customize your form submission emails with built-in templates from SUBMITTER. View and select from various layouts.">
+    <meta property="og:image" content="https://submitter.aniketgolhar.in/assets/submitter-logo.png">
+    <meta property="og:url" content="<?= base_url('docs-template');?>">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Form Email Templates - SUBMITTER">
+    <meta name="twitter:description" content="SUBMITTER offers modern, classic, striped, boxed, and minimal templates for your form data emails. View samples and choose the best fit.">
+    <meta name="twitter:image" content="https://submitter.aniketgolhar.in/assets/submitter-logo.png">
+    <meta name="twitter:url" content="<?= base_url('docs-template');?>">
+
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/logo.png');?>">
 
     <!-- STYLES -->
 
@@ -343,7 +366,9 @@
       </div>
 
       <div class="copyrights">
-        <p>&copy; <?= date('Y') ?> Aniket Golhar. Design and development by Aniket Golhar.</p>
+
+        <p>&copy; <?= date('Y') ?> <span style="font-weight: bold; color: white;">SUBM</span><span style="font-weight: bold; color: red;">I</span><span style="font-weight: bold; color: pink;">TTER</span>. Design and developed by <a href="https://aniketgolhar.in" target="_blank" style="color: white; text-decoration: none;">Aniket Golhar</a>.</p>
+        
       </div>
 
     </footer>

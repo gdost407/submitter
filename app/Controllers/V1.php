@@ -160,51 +160,61 @@ class V1 extends ResourceController
 
     switch ($type) {
       case 'modern':
-        $html .= "<h2 style='margin-top:0'>New Form Submission</h2>";
-        foreach ($data as $key => $value) {
-          $html .= "<p><strong>" . ucfirst($key) . ":</strong> " . nl2br(htmlspecialchars($value)) . "</p>";
-        }
+        $html .= '<div style="max-width: 500px; margin: auto; font-family: \'Segoe UI\', sans-serif; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h2 style="margin-top: 0;">New Form Submission</h2>';
+          foreach ($data as $key => $value) {
+            $html .= '<div style="margin-bottom: 10px;"><strong>'.ucfirst($key).':</strong> '.nl2br(htmlspecialchars($value)).'</div>';
+          }
+        $html .= '</div>';
+        
         break;
 
       case 'classic':
-        $html .= "<ul style='padding-left:20px'>";
-        foreach ($data as $key => $value) {
-          $html .= "<li><strong>" . ucfirst($key) . ":</strong> " . htmlspecialchars($value) . "</li>";
-        }
-        $html .= "</ul>";
+        $html .= '<div style="font-family: Georgia, serif; font-size: 16px;">
+          <p><strong>Form Submission Details:</strong></p>
+          <ul style="list-style-type: disc; padding-left: 20px;">';
+            foreach ($data as $key => $value) {
+              $html .= '<li><strong>'.ucfirst($key).':</strong> '.nl2br(htmlspecialchars($value)).'</li>';
+            }
+        $html .= '</ul>
+                </div>';
         break;
 
       case 'boxed':
-        $html .= "<div style='display:flex; flex-wrap:wrap; gap:10px;'>";
+        $html .= '<div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px; font-family: Arial, sans-serif; max-width: 500px; background: #f4f4f4; padding: 20px; border-radius: 8px;">';
         foreach ($data as $key => $value) {
-          $html .= "<div style='flex:1 0 45%; border:1px solid #ccc; padding:10px; border-radius:5px;'>
-                      <strong>" . ucfirst($key) . ":</strong><br>" . nl2br(htmlspecialchars($value)) . "
-                    </div>";
+          $html .= '<div style="font-weight: bold;">'.ucfirst($key).':</div>
+          <div>'.nl2br(htmlspecialchars($value)).'</div>';
         }
         $html .= "</div>";
         break;
 
-      case 'striped':
+      case 'badge':
+        $html .= '<div style="font-family: sans-serif; background-color: #fff; padding: 20px; border-left: 5px solid #4CAF50;">';
+        $colors = ['#4CAF50', '#F44336', '#FFEB3B', '#2196F3', '#9C27B0', '#3F51B5', '#FF9800', '#00BCD4'];
+        foreach ($data as $key => $value) {
+            $color = $colors[array_rand($colors)];
+            $html .= '<p><span style="background: '.$color.'; color:white; padding:4px 10px; border-radius:6px; font-weight: bold;">'.ucfirst($key).'</span> '.nl2br(htmlspecialchars($value)).'</p>';
+        }
+        $html .= '</div>';
+        break;
+
+      case 'minimal':
+        $html .= '<div style="font-family: \'Helvetica Neue\', sans-serif; font-size: 16px; color: #333;">';
+        foreach ($data as $key => $value) {
+          $html .= '<p><strong>'.ucfirst($key).'</strong><br>'.nl2br(htmlspecialchars($value)).'</p>
+          <hr style="border:none;border-top:1px solid #ccc;">';
+        }
+        $html .= '</div>';
+        break;
+
+      case 'basic':
+      default:
         $html .= "<table style='width:100%; border-collapse:collapse'>";
         $i = 0;
         foreach ($data as $key => $value) {
           $bg = $i++ % 2 === 0 ? '#f9f9f9' : '#ffffff';
           $html .= "<tr style='background:{$bg}'><td style='padding:8px'><strong>" . ucfirst($key) . "</strong></td><td style='padding:8px'>" . nl2br(htmlspecialchars($value)) . "</td></tr>";
-        }
-        $html .= "</table>";
-        break;
-
-      case 'minimal':
-        foreach ($data as $key => $value) {
-          $html .= "<div style='margin-bottom:10px'><strong>" . ucfirst($key) . ":</strong> " . nl2br(htmlspecialchars($value)) . "</div>";
-        }
-        break;
-
-      case 'basic':
-      default:
-        $html .= "<table border='1' cellpadding='8' cellspacing='0' style='width:100%; border-collapse:collapse'>";
-        foreach ($data as $key => $value) {
-          $html .= "<tr><td><strong>" . ucfirst($key) . "</strong></td><td>" . nl2br(htmlspecialchars($value)) . "</td></tr>";
         }
         $html .= "</table>";
         break;

@@ -5,7 +5,8 @@
     <title>Submitter Contact</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
+
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/logo.png');?>">
 
     <!-- STYLES -->
 
@@ -14,7 +15,8 @@
         transition: background-color 300ms ease, color 300ms ease;
       }
       *:focus {
-        background-color: rgba(221, 72, 20, .2);
+        background-color: rgba(221, 72, 20, 0.1);
+        color: rgba(221, 72, 20, 1);
         outline: none;
       }
       html, body {
@@ -233,7 +235,7 @@
           <!-- <span style="color: red;">to</span>  -->
           <span style="color: purple;">CONTACT</span>
         </h1>
-
+        <p style="text-align: center;">If you have any questions or suggestions, please contact me at <a href="mailto:info@aniketgolhar.in">info@aniketgolhar.in</a></p>
       </div>
 
     </header>
@@ -242,6 +244,117 @@
 
     <section>
       
+      <div class="contact-wrapper">
+        <div class="contact-box">
+          <h2>Get In Touch</h2>
+          <p>
+            Got feedback, ideas, or issues?<br><br> We’re building <span style="font-size: 18px; font-weight: bold; color: black;">SUBM</span>
+            <span style="font-size: 18px; font-weight: bold; color: red;">I</span>
+            <span style="font-size: 18px; font-weight: bold; color: purple;">TTER</span> for you. Send us a message and let’s make it better together.
+          </p>
+        </div>
+
+        <div class="contact-box" style="box-shadow: 0 0 10px rgba(0,0,0,0.06);">
+          <form action="" method="post" id="contact-form">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="full_name" placeholder="Your full name.." required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@email.." required>
+
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="+91 1234567890.." required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Write something.." required></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+          <div id="response" style="text-align: center; padding: 10px; margin-top: 10px; border-radius: 5px;">here is my response</div>
+        </div>
+      </div>
+
+      <style>
+        .contact-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          width: 100%;
+          justify-content: center;
+          box-sizing: border-box;
+        }
+
+        .contact-box {
+          width: 48%;
+          background: #fff;
+          padding: 25px;
+          border-radius: 10px;
+          min-width: 300px;
+          box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+          .contact-box {
+            width: 100%; /* Stack on mobile */
+          }
+        }
+        
+        .contact-box h2 {
+          margin-top: 0;
+          color: #222;
+        }
+
+        .contact-box p {
+          font-size: 15px;
+          color: #555;
+        }
+
+        .contact-box form label {
+          display: block;
+          margin-top: 15px;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .contact-box input[type="text"],
+        .contact-box input[type="email"],
+        .contact-box input[type="tel"],
+        .contact-box select,
+        .contact-box textarea {
+          width: 90%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 15px;
+          resize: vertical;
+        }
+
+        .contact-box textarea {
+          min-height: 150px;
+        }
+
+        .contact-box input[type="submit"] {
+          background-color: rgba(221, 72, 20, 0.1);
+          color: rgba(221, 72, 20, 1);
+          border: none;
+          padding: 12px 20px;
+          font-size: 16px;
+          border-radius: 6px;
+          margin-top: 20px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .contact-box input[type="submit"]:hover {
+          background-color: rgba(221, 72, 20, 0.4);
+        }
+
+        #response{
+          display: none;
+        }
+      </style>
+
     </section>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
@@ -252,12 +365,37 @@
       </div>
 
       <div class="copyrights">
-        <p>&copy; <?= date('Y') ?> Aniket Golhar. Design and development by Aniket Golhar.</p>
+
+        <p>&copy; <?= date('Y') ?> <span style="font-weight: bold; color: white;">SUBM</span><span style="font-weight: bold; color: red;">I</span><span style="font-weight: bold; color: pink;">TTER</span>. Design and developed by <a href="https://aniketgolhar.in" target="_blank" style="color: white; text-decoration: none;">Aniket Golhar</a>.</p>
+
       </div>
 
     </footer>
 
     <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $('#contact-form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: 'http://localhost:8080/v1/info@aniketgolhar.in',
+          method: 'POST',
+          contentType: false,
+          cache: false,
+          processData: false,
+          data: new FormData(this),
+          success: function(response) {
+            if(response.status == true){
+              $('#response').show();
+              $('#response').html('Thank your for reaching out!').css({'background-color': 'rgba(46, 155, 3, .1)', 'color': 'rgb(46, 155, 3)'});
+            }else{
+              $('#response').show();
+              $('#response').html('Something went wrong!').css({'background-color': 'rgba(221, 72, 20, .1)', 'color': 'rgb(221, 72, 20)'});
+            }
+          }
+        });
+      });
+    </script>
 
     <script {csp-script-nonce}>
       document.getElementById("menuToggle").addEventListener('click', toggleMenu);

@@ -5,7 +5,29 @@
     <title>Submitter Documentation</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
+    <!-- Meta Description for AJAX Documentation -->
+    <meta name="description" content="Learn how to submit HTML forms via AJAX using SUBMITTER API. Send data without page reload, handle responses, and integrate securely.">
+
+    <meta name="keywords" content="submit, submitter, ajax form submission, ajax submit HTML form, submitter ajax form, form to API using javascript, codeigniter ajax form handler, fetch form submission">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Aniket Golhar">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AJAX Form Submission - SUBMITTER Docs">
+    <meta property="og:description" content="Use AJAX to submit your forms to SUBMITTER without reloading the page. Handle responses with JavaScript and improve UX.">
+    <meta property="og:image" content="<?= base_url('assets/logo.png');?>">
+    <meta property="og:url" content="<?= base_url('docs-ajax');?>">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AJAX Form Docs - SUBMITTER API">
+    <meta name="twitter:description" content="Submit forms via AJAX to SUBMITTER backend. Use Fetch or jQuery to send POST requests and receive responses in real time.">
+    <meta name="twitter:image" content="<?= base_url('assets/logo.png');?>">
+    <meta name="twitter:url" content="<?= base_url('docs-ajax');?>">
+
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/logo.png');?>">
 
     <!-- STYLES -->
 
@@ -244,7 +266,7 @@
 
       <h4 style="font-weight: bold;">1. Fetch Library</h4>
 
-      <pre><code>fetch('https://submitter.aniketgolhar.in/v1/your@email.com', {
+      <pre><code>fetch('<?= base_url();?>v1/your@email.com', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -261,7 +283,7 @@
       
       <h4 style="font-weight: bold;">2. Axios Library</h4>
       
-      <pre><code>axios.post('https://submitter.aniketgolhar.in/v1/your@email.com', {
+      <pre><code>axios.post('<?= base_url();?>v1/your@email.com', {
     name: "FormSubmit",
     message: "I'm from Devro LABS"
 })
@@ -277,7 +299,7 @@
 
       <pre><code>$.ajax({
     method: 'POST',
-    url: 'https://submitter.aniketgolhar.in/v1/your@email.com',
+    url: '<?= base_url();?>v1/your@email.com',
     dataType: 'json',
     data: {
         name: "FormSubmit",
@@ -297,7 +319,9 @@
       </div>
 
       <div class="copyrights">
-        <p>&copy; <?= date('Y') ?> Aniket Golhar. Design and development by Aniket Golhar.</p>
+
+        <p>&copy; <?= date('Y') ?> <span style="font-weight: bold; color: white;">SUBM</span><span style="font-weight: bold; color: red;">I</span><span style="font-weight: bold; color: pink;">TTER</span>. Design and developed by <a href="https://aniketgolhar.in" target="_blank" style="color: white; text-decoration: none;">Aniket Golhar</a>.</p>
+        
       </div>
 
     </footer>

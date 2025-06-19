@@ -5,7 +5,29 @@
     <title>Submitter Documentation</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://asg.aniketgolhar.in/assets/asg-logo.png">
+    <!-- Meta Description for SUBMITTER Documentation -->
+    <meta name="description" content="Learn how to use SUBMITTER to handle HTML form submissions, send email notifications, upload files, and integrate with APIs using our detailed documentation.">
+
+    <meta name="keywords" content="submit, submitter, submitter documentation, form backend docs, form API docs, how to submit HTML forms, form submission guide, webhook integration, email form tutorial, file upload API">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Aniket Golhar">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Documentation - SUBMITTER Form API">
+    <meta property="og:description" content="Full documentation for SUBMITTER – a powerful backend service for form handling, email delivery, file uploads, and automation.">
+    <meta property="og:image" content="<?= base_url('assets/logo.png');?>">
+    <meta property="og:url" content="<?= base_url('docs');?>">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SUBMITTER Documentation - Full API Guide">
+    <meta name="twitter:description" content="Use SUBMITTER to process form data securely with features like autoresponders, file uploads, CC emails, and webhooks. Explore the full documentation.">
+    <meta name="twitter:image" content="<?= base_url('assets/logo.png');?>">
+    <meta name="twitter:url" content="<?= base_url('docs');?>">
+
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/logo.png');?>">
 
     <!-- STYLES -->
 
@@ -301,7 +323,7 @@
       <p>SUBMITTER supports native file uploads, letting you collect pdf or images files easily—perfect for info that can’t be captured by text fields alone.</p>
       <p>Remember to add <span style="background-color: rgba(247, 248, 249, 1); border: 1px solid rgba(242, 242, 242, 1); padding: 0.3rem 1rem;">enctype="multipart/form-data"</span> in your form tag to enable file uploads.</p>
 
-      <pre><code style="line-height: 1.5rem;">&lt;form action="https://submitter.aniketgolhar.in/v1/your@email.com" method="POST" enctype="multipart/form-data"&gt;
+      <pre><code style="line-height: 1.5rem;">&lt;form action="<?= base_url();?>v1/your@email.com" method="POST" enctype="multipart/form-data"&gt;
       &lt;input type="email" name="email" placeholder="Your email"&gt;
       &lt;textarea name="message" placeholder="Your message"&gt;&lt;/textarea&gt;
       &lt;input type="file" name="attachment" accept=".pdf, .png, .jpg, .jpeg"&gt;
@@ -314,7 +336,7 @@
       <p>With SUBMITTER, you can submit forms via AJAX seamlessly, with your users stay on the page, and it even supports cross-origin requests effortlessly.</p>
 
       <pre><code>$.ajax({
-      url: "https://submitter.aniketgolhar.in/v1/your@email.com",
+      url: "<?= base_url();?>v1/your@email.com",
       method: "POST",
       data: {
           name: "FormSubmit",
@@ -342,7 +364,9 @@
       </div>
 
       <div class="copyrights">
-        <p>&copy; <?= date('Y') ?> Aniket Golhar. Design and development by Aniket Golhar.</p>
+
+        <p>&copy; <?= date('Y') ?> <span style="font-weight: bold; color: white;">SUBM</span><span style="font-weight: bold; color: red;">I</span><span style="font-weight: bold; color: pink;">TTER</span>. Design and developed by <a href="https://aniketgolhar.in" target="_blank" style="color: white; text-decoration: none;">Aniket Golhar</a>.</p>
+
       </div>
 
     </footer>
