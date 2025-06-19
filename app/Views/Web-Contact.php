@@ -268,6 +268,10 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" placeholder="Write something.." required></textarea>
 
+            <input type="hidden" name="submitter_replyto" value="true">
+            <input type="hidden" name="submitter_subject" value="Query from SUBMITTER Contact Page">
+            <input type="hidden" name="submitter_cc" value="golharaniket07@gmail.com">
+            <input type="hidden" name="submitter_template" value="basic">
             <input type="submit" value="Submit">
           </form>
           <div id="response" style="text-align: center; padding: 10px; margin-top: 10px; border-radius: 5px;">here is my response</div>
@@ -378,7 +382,7 @@
       $('#contact-form').submit(function(e) {
         e.preventDefault();
         $.ajax({
-          url: 'http://localhost:8080/v1/info@aniketgolhar.in',
+          url: '<?= base_url('v1/info@aniketgolhar.in'); ?>',
           method: 'POST',
           contentType: false,
           cache: false,
