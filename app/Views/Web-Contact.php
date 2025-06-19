@@ -271,7 +271,7 @@
             <input type="hidden" name="submitter_replyto" value="true">
             <input type="hidden" name="submitter_subject" value="Query from SUBMITTER Contact Page">
             <input type="hidden" name="submitter_cc" value="golharaniket07@gmail.com">
-            <input type="hidden" name="submitter_template" value="basic">
+            <input type="hidden" name="submitter_template" value="badge">
             <input type="submit" value="Submit">
           </form>
           <div id="response" style="text-align: center; padding: 10px; margin-top: 10px; border-radius: 5px;">here is my response</div>
@@ -382,7 +382,7 @@
       $('#contact-form').submit(function(e) {
         e.preventDefault();
         $.ajax({
-          url: '<?= base_url('v1/info@aniketgolhar.in'); ?>',
+          url: '<?= base_url('v1/61eff4d4cbe2d093971a59b04d490348'); ?>',
           method: 'POST',
           contentType: false,
           cache: false,

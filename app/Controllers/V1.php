@@ -12,7 +12,13 @@ use DateTime;
 class V1 extends ResourceController
 {
   use ResponseTrait;
+  protected $db;
   protected $apiModel;
+
+  public function __construct()
+  {
+    $this->db = \Config\Database::connect();
+  }
 
   public function submit($email = null){
     $this->apiModel = new ApiModel();
@@ -191,10 +197,19 @@ class V1 extends ResourceController
 
       case 'badge':
         $html .= '<div style="font-family: sans-serif; background-color: #fff; padding: 20px; border-left: 5px solid #4CAF50;">';
-        $colors = ['#4CAF50', '#F44336', '#FFEB3B', '#2196F3', '#9C27B0', '#3F51B5', '#FF9800', '#00BCD4'];
+        $colors = ['#363f45', '#F44336', '#800080', '#4CAF50', '#FFEB3B', '#2196F3', '#9C27B0', '#3F51B5', '#FF9800', '#00BCD4'];
+
+        $colorCount = count($colors);
+        $index = 0;
+
         foreach ($data as $key => $value) {
-            $color = $colors[array_rand($colors)];
-            $html .= '<p><span style="background: '.$color.'; color:white; padding:4px 10px; border-radius:6px; font-weight: bold;">'.ucfirst($key).'</span> '.nl2br(htmlspecialchars($value)).'</p>';
+          $color = $colors[$index];
+          $html .= '<p><span style="background: ' . $color . '; color:white; padding:4px 10px; border-radius:6px; font-weight: bold;">' . ucfirst($key) . '</span> ' . nl2br(htmlspecialchars($value)) . '</p>';
+          
+          $index++;
+          if ($index >= $colorCount) {
+            $index = 0;
+          }
         }
         $html .= '</div>';
         break;
